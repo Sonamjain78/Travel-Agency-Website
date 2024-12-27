@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #f0f8ff, #add8e6);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #452323;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-left: 10px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff5722;
+}
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #e94e77;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '~';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #e94e77;
+            font-size: 30px;
+            top: 10px;
+        }
+
+        .packages-section {
+            margin: 20px 0;
+        }
+
+        .package-category {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: #f9f9f9;
+        }
+
+        .package-category h3 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        .package-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .package-item {
+            min-width: 200px;
+            margin-right: 20px;
+            background: #e0f7fa;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .package-item:hover {
+            transform: scale(1.05);
+        }
+
+        .package-item h4 {
+            color: #e94e77;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .package-item p {
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        /* News Signup Styles */
+        .news-signup {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #1cbeb0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-signup input[type="email"] {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+            border: 1px solid #4a90e2;
+            border-radius: 5px;
+        }
+
+        .news-signup button {
+            padding: 10px 15px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .news-signup button:hover {
+            background-color: #357ABD;
+        }
+
+        /* Live Map Styles */
+        .live-map {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">ExploreWorld</div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="travel.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <div class="container">
+        <h1 class="tagline">Explore Our Exciting Packages!</h1>
+
+        <!-- Bus Trip Packages -->
+        <div class="packages-section">
+            <div class="package-category">
+                <h3>Bus Trip Packages</h3>
+                <div class="package-list">
+                    <!-- Generate 10 Bus Trip Packages -->
+                    <div class="package-item">
+                        <h4>Package 1</h4>
+                        <p>Destination: Paris</p>
+                        <p>Price: $150</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 2</h4>
+                        <p>Destination: London</p>
+                        <p>Price: $120</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 3</h4>
+                        <p>Destination: Rome</p>
+                        <p>Price: $180</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 4</h4>
+                        <p>Destination: Berlin</p>
+                        <p>Price: $130</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 5</h4>
+                        <p>Destination: Madrid</p>
+                        <p>Price: $160</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 6</h4>
+                        <p>Destination: Amsterdam</p>
+                        <p>Price: $140</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 7</h4>
+                        <p>Destination: Lisbon</p>
+                        <p>Price: $170</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 8</h4>
+                        <p>Destination: Vienna</p>
+                        <p>Price: $150</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 9</h4>
+                        <p>Destination: Prague</p>
+                        <p>Price: $120</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 10</h4>
+                        <p>Destination: Brussels</p>
+                        <p>Price: $130</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flight Trip Packages -->
+        <div class="packages-section">
+            <div class="package-category">
+                <h3>Flight Trip Packages</h3>
+                <div class="package-list">
+                    <!-- Generate 10 Flight Trip Packages -->
+                    <div class="package-item">
+                        <h4>Package 11</h4>
+                        <p>Destination: New York</p>
+                        <p>Price: $500</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 12</h4>
+                        <p>Destination: Sydney</p>
+                        <p>Price: $600</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 13</h4>
+                        <p>Destination: Tokyo</p>
+                        <p>Price: $550</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 14</h4>
+                        <p>Destination: Dubai</p>
+                        <p>Price: $700</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 15</h4>
+                        <p>Destination: Bangkok</p>
+                        <p>Price: $450</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 16</h4>
+                        <p>Destination: Singapore</p>
+                        <p>Price: $550</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 17</h4>
+                        <p>Destination: Los Angeles</p>
+                        <p>Price: $600</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 18</h4>
+                        <p>Destination: Toronto</p>
+                        <p>Price: $520</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 19</h4>
+                        <p>Destination: Cape Town</p>
+                        <p>Price: $650</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 20</h4>
+                        <p>Destination: Rio de Janeiro</p>
+                        <p>Price: $580</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Train Trip Packages -->
+        <div class="packages-section">
+            <div class="package-category">
+                <h3>Train Trip Packages</h3>
+                <div class="package-list">
+                    <!-- Generate 10 Train Trip Packages -->
+                    <div class="package-item">
+                        <h4>Package 21</h4>
+                        <p>Destination: Moscow</p>
+                        <p>Price: $300</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 22</h4>
+                        <p>Destination: India</p>
+                        <p>Price: $250</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 23</h4>
+                        <p>Destination: Italy</p>
+                        <p>Price: $320</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 24</h4>
+                        <p>Destination: Spain</p>
+                        <p>Price: $280</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 25</h4>
+                        <p>Destination: USA</p>
+                        <p>Price: $400</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 26</h4>
+                        <p>Destination: China</p>
+                        <p>Price: $350</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 27</h4>
+                        <p>Destination: Australia</p>
+                        <p>Price: $380</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 28</h4>
+                        <p>Destination: Canada</p>
+                        <p>Price: $340</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 29</h4>
+                        <p>Destination: Brazil</p>
+                        <p>Price: $360</p>
+                    </div>
+                    <div class="package-item">
+                        <h4>Package 30</h4>
+                        <p>Destination: Japan</p>
+                        <p>Price: $390</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Signup Section -->
+        <div class="news-signup">
+            <h2>Stay Updated!</h2>
+            <p>Subscribe to our newsletter for the latest travel tips and exclusive offers.</p>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </div>
+
+        <!-- Live Map Section -->
+        <section class="live-map">
+            <h2>Explore Destinations on the Map</h2>
+            <p>Hover over destinations to learn more and start planning your journey!</p>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086166!2d144.95373531531392!3d-37.816279742021825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d95c8a021e9b!2sFederation+Square!5e0!3m2!1sen!2sau!4v1516607882609" 
+              width="100%" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"></iframe>
+          </section>
+
+        <div class="footer">
+            <p>
+                &copy; 2024 TravelBuddy. All Rights Reserved. | <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
